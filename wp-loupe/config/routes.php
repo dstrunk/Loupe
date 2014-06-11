@@ -7,6 +7,10 @@
     'templates.path' => WP_LOUPE . 'app/views/',
   ));
 
+  $app->notFound(function() use ($app, $request) {
+    $app->render('errors/404.html', array('request' => $request));
+  });
+
   $app->get('/', function() use ($app, $wp) {
     $posts = $wp->getPosts();
     $app->render('templates/index.html', array('posts' => $posts));
@@ -16,10 +20,6 @@
     var_dump($wp->getPostsInCategory('uncategorized', '', $id));
     do_action('admin_init');
     wp_footer();
-  });
-
-  $app->notFound(function() use ($app, $request) {
-    $app->render('errors/404.html', array('request' => $request));
   });
 
   $app->run();

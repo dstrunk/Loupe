@@ -5,4 +5,4 @@
   require_once(WP_LOUPE . 'lib/Slim/Slim.php');
 
   // Routes
-  require_once(WP_LOUPE . 'config/router.php');
+  require_once(WP_LOUPE . 'config/routes.php');

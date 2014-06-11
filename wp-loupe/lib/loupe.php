@@ -3,9 +3,7 @@
  * Model for interfacing with a Wordpress backend
  *
  * @author Alex Crooks, Si digital http://sidigital.co
- *
- * With some additions by dditions by:
- * @author Daniel Strunk, http://dstrunk.com
+ * With some additions by Daniel Strunk, http://dstrunk.com
  **/
 
 // Load the wordpress bootstrap and it's helpers
