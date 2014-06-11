@@ -162,4 +162,6 @@ class Loupe
     }
 }
 
-$wp = new WordpressNoTheme();
+$wp = new Loupe();
+
+?>
