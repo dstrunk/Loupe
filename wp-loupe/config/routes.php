@@ -11,15 +11,25 @@
     $app->render('errors/404.html', array('request' => $request));
   });
 
-  $app->get('/', function() use ($app, $wp) {
-    $posts = $wp->getPosts();
-    $app->render('templates/index.html', array('posts' => $posts));
-  });
-
-  $app->get('/books/:id', function ($id) use ($wp) {
-    var_dump($wp->getPostsInCategory('uncategorized', '', $id));
-    do_action('admin_init');
-    wp_footer();
-  });
+  /**
+   *  An example of your root route. In this example, the template 'index.html'
+   *  is passed an array of posts, much like a front page displaying
+   *  your latest posts would.
+   *
+   *  $app->get('/', function() use ($app, $wp) {
+   *    $posts = $wp->getPosts();
+   *    $app->render('templates/index.html', array('posts' => $posts));
+   *  });
+   *
+   *
+   *  An example of a /books/ route. In this example, /books/0 returns
+   *  the first post in the category 'books'
+   *
+   *  $app->get('/books/:id', function ($id) use ($wp) {
+   *    var_dump($wp->getPostsInCategory('books', '', $id));
+   *    do_action('admin_init');
+   *    wp_footer();
+   *  });
+   */
 
   $app->run();
